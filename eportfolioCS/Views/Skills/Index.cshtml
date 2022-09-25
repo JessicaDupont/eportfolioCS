@@ -2,6 +2,29 @@
 @{
     ViewData["Title"] = "Compétences";
 }
-
 <h1>@ViewData["Title"]</h1>
+<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+    <div class="container">
+        <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+            <ul class="navbar-nav flex-grow-1">
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Skills" asp-action="HardDev">Développement</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Skills" asp-action="Hard">Bureautique</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Skills" asp-action="Language">Langues</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Skills" asp-action="Soft">Soft skills</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Skills" asp-action="Tests">Tests de personnalité</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
 <p>Page en construction</p>

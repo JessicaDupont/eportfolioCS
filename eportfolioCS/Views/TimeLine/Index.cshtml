@@ -2,6 +2,32 @@
 @{
     ViewData["Title"] = "Ligne du temps";
 }
-
 <h1>@ViewData["Title"]</h1>
+<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+    <div class="container">
+        <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+            <ul class="navbar-nav flex-grow-1">
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="TimeLine" asp-action="Index">Ligne du temps</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="TimeLine" asp-action="Pro">Expériences professionnelles</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="TimeLine" asp-action="Savoir">Études et formations</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="TimeLine" asp-action="Index">Projets</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="TimeLine" asp-action="Pro">Bénévolats</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="TimeLine" asp-action="Savoir">Job de rêve</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
 <p>Page en construction</p>
