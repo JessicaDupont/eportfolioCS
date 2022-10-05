@@ -7,16 +7,42 @@ namespace eportfolioCS.DAL
 {
     public class DataContext : DbContext
     {
-        private readonly string _connectToDBString = "";//TODO recupérer la chaine de connexion à la DB
-        
-        /*les entités
+        private readonly string _connectToDBString;
+
+        public DataContext()
+        {
+            _connectToDBString = "Data Source=(localdb)\\MSSQLLocalDB;" +
+                "Initial Catalog=eportfolioCSTest;" +
+                "Integrated Security=True;" +
+                "Connect Timeout=30;Encrypt=False;" +
+                "TrustServerCertificate=False;" +
+                "ApplicationIntent=ReadWrite;" +
+                "MultiSubnetFailover=False";
+        }
+        public DataContext(string ConnectionString)
+        {
+            _connectToDBString = ConnectionString;
+        }
+
+        /*les ENTITES
          elles seront accessibles par le projet appelant
+        le nom de la propriété = nom de la table (sauf indication contraire)
          */
         public DbSet<TexteEntity> Textes { get; set; }
+        public DbSet<CategorieEntity> Categories { get; set; }
+        public DbSet<LangageEntity> Langages { get; set; }
+        public DbSet<FrameworkEntity> Frameworks { get; set; }
+        public DbSet<TypeProjetEntity> TypesProjet { get; set; }
+        public DbSet<IdeEntity> IDEs { get; set; }
+        public DbSet<SgbdEntity> SGBDs { get; set; }
+        public DbSet<EtablissementEntity> Etablissements { get; set; }
+        public DbSet<ExperienceEntity> Experiences { get; set; }
+        public DbSet<ProjetEntity> Projets { get; set; }
+        public DbSet<FrameworkProjetEntity> FrameworkProjet { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionBuilder) 
         {
-            //TODO optionBuilder.UseSqlServer(_connectToDBString);
+            optionBuilder.UseSqlServer(_connectToDBString);
         }
 
         protected override void OnModelCreating(ModelBuilder builder)

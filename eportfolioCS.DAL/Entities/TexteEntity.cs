@@ -1,21 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace eportfolioCS.DAL.Entities
 {
-    public class TexteEntity
+    /*
+     * Data annotaions
+     */
+    [Table("Texte")]
+    public class TexteEntity : IEntityBase
     {
-        public int TexteID { get; set; }
-#region FK TextePrecedent
-        public int? TextePrecedentID { get; set; }
-        public virtual TexteEntity TexteActuel { get; set; }
-        public virtual TexteEntity TextePrecedent { get; set; }
-#endregion
+        [Key]
+        public int ID { get; set; }
+        [Required]
         public string Contenu { get; set; }
         public int? Position { get;set; }
         public string PieceJointe { get; set; }
+
+        #region FK TextePrecedent
+        [ForeignKey("TexteEntity")]
+        public int? TextePrecedentID { get; set; }
+        public virtual TexteEntity TextePrecedent { get; set; }
+        public virtual TexteEntity TexteSuivant { get; set; }
+        #endregion
+
     }
 }
