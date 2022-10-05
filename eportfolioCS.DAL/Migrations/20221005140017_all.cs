@@ -296,6 +296,109 @@ namespace eportfolioCS.DAL.Migrations
                         principalColumn: "ID");
                 });
 
+            migrationBuilder.InsertData(
+                table: "Categorie",
+                columns: new[] { "ID", "Nom", "ParentID" },
+                values: new object[,]
+                {
+                    { 1, "Expériences professionnelles", null },
+                    { 2, "Études et formations", null },
+                    { 4, "Études", null }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Etablissement",
+                columns: new[] { "ID", "Adresse", "CodePostal", "Description", "Nom", "Pays", "Province", "SiteWeb", "Ville" },
+                values: new object[,]
+                {
+                    { 1, "Avenue Jean Mermoz 18", 6041, "Centre de compétences", "TechnofuturTIC", "Belgique", "Hainaut", "www.technofuturtic.be", "Gosselies" },
+                    { 2, null, 4000, "Haute École Libre Mosane", "HELMo", "Belgique", "Liège", "www.helmo.be", "Liège" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "IDE",
+                columns: new[] { "ID", "Nom", "TexteID" },
+                values: new object[] { 1, "Visual Studio", null });
+
+            migrationBuilder.InsertData(
+                table: "Langage",
+                columns: new[] { "ID", "annee_creation", "Nom", "TexteID" },
+                values: new object[,]
+                {
+                    { 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified).AddTicks(2001), "C#", null },
+                    { 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified).AddTicks(1991), "HTML", null },
+                    { 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified).AddTicks(1996), "Java", null },
+                    { 4, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified).AddTicks(1995), "JavaScript", null },
+                    { 5, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified).AddTicks(1986), "SQL", null },
+                    { 6, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified).AddTicks(1994), "PHP", null },
+                    { 7, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified).AddTicks(1994), "CSS", null }
+                });
+
+            migrationBuilder.InsertData(
+                table: "SGBD",
+                columns: new[] { "ID", "Nom", "TexteID" },
+                values: new object[,]
+                {
+                    { 1, "SQL Server", null },
+                    { 2, "Oracle", null },
+                    { 3, "MySQL", null }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Type_Projet",
+                columns: new[] { "ID", "Nom", "TexteID" },
+                values: new object[,]
+                {
+                    { 1, "Logiciel Desktop", null },
+                    { 2, "Site Web", null },
+                    { 3, "API Web", null },
+                    { 4, "App Mobile", null }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Categorie",
+                columns: new[] { "ID", "Nom", "ParentID" },
+                values: new object[,]
+                {
+                    { 3, "Stages", 1 },
+                    { 5, "Formations", 2 }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Experience",
+                columns: new[] { "ID", "CategorieID", "date_debut", "date_fin", "FirmeID", "ParentID", "TexteID", "Titre" },
+                values: new object[,]
+                {
+                    { 3, 4, new DateTime(2016, 9, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2019, 9, 14, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, null, null, "Bachelier en informatique de gestion" },
+                    { 4, 4, new DateTime(2008, 9, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2011, 1, 7, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, null, null, "Bachelier en informatique de gestion" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Framework",
+                columns: new[] { "ID", "LangageID", "Nom", "ParentID", "TexteID" },
+                values: new object[,]
+                {
+                    { 1, 1, "Pas de Framework", null, null },
+                    { 2, 2, "Pas de Framework", null, null },
+                    { 3, 3, "Pas de Framework", null, null },
+                    { 4, 4, "Pas de Framework", null, null },
+                    { 5, 5, "Pas de Framework", null, null },
+                    { 6, 6, "Pas de Framework", null, null },
+                    { 7, 7, "Pas de Framework", null, null },
+                    { 8, 1, "ASP.NET", null, null },
+                    { 9, 1, "API Web", null, null }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Experience",
+                columns: new[] { "ID", "CategorieID", "date_debut", "date_fin", "FirmeID", "ParentID", "TexteID", "Titre" },
+                values: new object[] { 1, 5, new DateTime(2022, 9, 6, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 1, null, null, "Développeur Web orienté Data Analysis" });
+
+            migrationBuilder.InsertData(
+                table: "Experience",
+                columns: new[] { "ID", "CategorieID", "date_debut", "date_fin", "FirmeID", "ParentID", "TexteID", "Titre" },
+                values: new object[] { 2, 5, new DateTime(2021, 3, 22, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2021, 9, 7, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, null, null, "Développeur .NET, BI & Sharepoint" });
+
             migrationBuilder.CreateIndex(
                 name: "IX_Categorie_ParentID",
                 table: "Categorie",

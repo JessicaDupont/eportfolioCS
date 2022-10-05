@@ -1,5 +1,5 @@
-﻿using eportfolioCS.DAL.Entities;
-using eportfolioCS.DAL.EntityConfig;
+﻿using eportfolioCS.DAL.Datas;
+using eportfolioCS.DAL.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
 
@@ -47,7 +47,7 @@ namespace eportfolioCS.DAL
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            builder.ApplyConfiguration(new TexteConfig());
+            InitDB.LoadData(builder);
         }
     }
 }

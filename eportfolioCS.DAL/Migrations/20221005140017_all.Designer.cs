@@ -12,7 +12,7 @@ using eportfolioCS.DAL;
 namespace eportfolioCS.DAL.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20221005114734_all")]
+    [Migration("20221005140017_all")]
     partial class all
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -46,6 +46,36 @@ namespace eportfolioCS.DAL.Migrations
                         .HasFilter("[ParentID] IS NOT NULL");
 
                     b.ToTable("Categorie");
+
+                    b.HasData(
+                        new
+                        {
+                            ID = 1,
+                            Nom = "Expériences professionnelles"
+                        },
+                        new
+                        {
+                            ID = 2,
+                            Nom = "Études et formations"
+                        },
+                        new
+                        {
+                            ID = 3,
+                            Nom = "Stages",
+                            ParentID = 1
+                        },
+                        new
+                        {
+                            ID = 4,
+                            Nom = "Études",
+                            ParentID = 2
+                        },
+                        new
+                        {
+                            ID = 5,
+                            Nom = "Formations",
+                            ParentID = 2
+                        });
                 });
 
             modelBuilder.Entity("eportfolioCS.DAL.Entities.EtablissementEntity", b =>
@@ -87,6 +117,31 @@ namespace eportfolioCS.DAL.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("Etablissement");
+
+                    b.HasData(
+                        new
+                        {
+                            ID = 1,
+                            Adresse = "Avenue Jean Mermoz 18",
+                            CodePostal = 6041,
+                            Description = "Centre de compétences",
+                            Nom = "TechnofuturTIC",
+                            Pays = "Belgique",
+                            Province = "Hainaut",
+                            SiteWeb = "www.technofuturtic.be",
+                            Ville = "Gosselies"
+                        },
+                        new
+                        {
+                            ID = 2,
+                            CodePostal = 4000,
+                            Description = "Haute École Libre Mosane",
+                            Nom = "HELMo",
+                            Pays = "Belgique",
+                            Province = "Liège",
+                            SiteWeb = "www.helmo.be",
+                            Ville = "Liège"
+                        });
                 });
 
             modelBuilder.Entity("eportfolioCS.DAL.Entities.ExperienceEntity", b =>
@@ -134,6 +189,43 @@ namespace eportfolioCS.DAL.Migrations
                     b.HasIndex("TexteID");
 
                     b.ToTable("Experience");
+
+                    b.HasData(
+                        new
+                        {
+                            ID = 1,
+                            CategorieID = 5,
+                            DateDebut = new DateTime(2022, 9, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            FirmeID = 1,
+                            Titre = "Développeur Web orienté Data Analysis"
+                        },
+                        new
+                        {
+                            ID = 2,
+                            CategorieID = 5,
+                            DateDebut = new DateTime(2021, 3, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateFin = new DateTime(2021, 9, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            FirmeID = 1,
+                            Titre = "Développeur .NET, BI & Sharepoint"
+                        },
+                        new
+                        {
+                            ID = 3,
+                            CategorieID = 4,
+                            DateDebut = new DateTime(2016, 9, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateFin = new DateTime(2019, 9, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            FirmeID = 2,
+                            Titre = "Bachelier en informatique de gestion"
+                        },
+                        new
+                        {
+                            ID = 4,
+                            CategorieID = 4,
+                            DateDebut = new DateTime(2008, 9, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateFin = new DateTime(2011, 1, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            FirmeID = 2,
+                            Titre = "Bachelier en informatique de gestion"
+                        });
                 });
 
             modelBuilder.Entity("eportfolioCS.DAL.Entities.FrameworkEntity", b =>
@@ -168,6 +260,62 @@ namespace eportfolioCS.DAL.Migrations
                     b.HasIndex("TexteID");
 
                     b.ToTable("Framework");
+
+                    b.HasData(
+                        new
+                        {
+                            ID = 1,
+                            LangageID = 1,
+                            Nom = "Pas de Framework"
+                        },
+                        new
+                        {
+                            ID = 2,
+                            LangageID = 2,
+                            Nom = "Pas de Framework"
+                        },
+                        new
+                        {
+                            ID = 3,
+                            LangageID = 3,
+                            Nom = "Pas de Framework"
+                        },
+                        new
+                        {
+                            ID = 4,
+                            LangageID = 4,
+                            Nom = "Pas de Framework"
+                        },
+                        new
+                        {
+                            ID = 5,
+                            LangageID = 5,
+                            Nom = "Pas de Framework"
+                        },
+                        new
+                        {
+                            ID = 6,
+                            LangageID = 6,
+                            Nom = "Pas de Framework"
+                        },
+                        new
+                        {
+                            ID = 7,
+                            LangageID = 7,
+                            Nom = "Pas de Framework"
+                        },
+                        new
+                        {
+                            ID = 8,
+                            LangageID = 1,
+                            Nom = "ASP.NET"
+                        },
+                        new
+                        {
+                            ID = 9,
+                            LangageID = 1,
+                            Nom = "API Web"
+                        });
                 });
 
             modelBuilder.Entity("eportfolioCS.DAL.Entities.FrameworkProjetEntity", b =>
@@ -229,6 +377,13 @@ namespace eportfolioCS.DAL.Migrations
                     b.HasIndex("TexteID");
 
                     b.ToTable("IDE");
+
+                    b.HasData(
+                        new
+                        {
+                            ID = 1,
+                            Nom = "Visual Studio"
+                        });
                 });
 
             modelBuilder.Entity("eportfolioCS.DAL.Entities.LangageEntity", b =>
@@ -255,6 +410,50 @@ namespace eportfolioCS.DAL.Migrations
                     b.HasIndex("TexteID");
 
                     b.ToTable("Langage");
+
+                    b.HasData(
+                        new
+                        {
+                            ID = 1,
+                            AnneeCreation = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified).AddTicks(2001),
+                            Nom = "C#"
+                        },
+                        new
+                        {
+                            ID = 2,
+                            AnneeCreation = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified).AddTicks(1991),
+                            Nom = "HTML"
+                        },
+                        new
+                        {
+                            ID = 3,
+                            AnneeCreation = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified).AddTicks(1996),
+                            Nom = "Java"
+                        },
+                        new
+                        {
+                            ID = 4,
+                            AnneeCreation = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified).AddTicks(1995),
+                            Nom = "JavaScript"
+                        },
+                        new
+                        {
+                            ID = 5,
+                            AnneeCreation = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified).AddTicks(1986),
+                            Nom = "SQL"
+                        },
+                        new
+                        {
+                            ID = 6,
+                            AnneeCreation = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified).AddTicks(1994),
+                            Nom = "PHP"
+                        },
+                        new
+                        {
+                            ID = 7,
+                            AnneeCreation = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified).AddTicks(1994),
+                            Nom = "CSS"
+                        });
                 });
 
             modelBuilder.Entity("eportfolioCS.DAL.Entities.ProjetEntity", b =>
@@ -326,6 +525,23 @@ namespace eportfolioCS.DAL.Migrations
                     b.HasIndex("TexteID");
 
                     b.ToTable("SGBD");
+
+                    b.HasData(
+                        new
+                        {
+                            ID = 1,
+                            Nom = "SQL Server"
+                        },
+                        new
+                        {
+                            ID = 2,
+                            Nom = "Oracle"
+                        },
+                        new
+                        {
+                            ID = 3,
+                            Nom = "MySQL"
+                        });
                 });
 
             modelBuilder.Entity("eportfolioCS.DAL.Entities.TexteEntity", b =>
@@ -378,6 +594,28 @@ namespace eportfolioCS.DAL.Migrations
                     b.HasIndex("TexteID");
 
                     b.ToTable("Type_Projet");
+
+                    b.HasData(
+                        new
+                        {
+                            ID = 1,
+                            Nom = "Logiciel Desktop"
+                        },
+                        new
+                        {
+                            ID = 2,
+                            Nom = "Site Web"
+                        },
+                        new
+                        {
+                            ID = 3,
+                            Nom = "API Web"
+                        },
+                        new
+                        {
+                            ID = 4,
+                            Nom = "App Mobile"
+                        });
                 });
 
             modelBuilder.Entity("eportfolioCS.DAL.Entities.CategorieEntity", b =>
