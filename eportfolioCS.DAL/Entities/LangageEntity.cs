@@ -17,6 +17,7 @@ namespace eportfolioCS.DAL.Entities
         public string Nom { get; set; }
         [Column("annee_creation", TypeName ="DateTime2")]
         public DateTime AnneeCreation { get; set; }
+        public string ImageUrl { get; set; }
 
         #region FK texte
         [ForeignKey("TexteEntity")]

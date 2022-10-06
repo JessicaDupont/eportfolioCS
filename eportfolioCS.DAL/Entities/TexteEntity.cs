@@ -19,7 +19,6 @@ namespace eportfolioCS.DAL.Entities
         [Required]
         public string Contenu { get; set; }
         public int? Position { get;set; }
-        public string PieceJointe { get; set; }
 
         #region FK TextePrecedent
         [ForeignKey("TexteEntity")]

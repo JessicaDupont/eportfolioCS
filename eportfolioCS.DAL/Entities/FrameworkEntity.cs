@@ -15,6 +15,7 @@ namespace eportfolioCS.DAL.Entities
         public int ID { get; set; }
         [Required]
         public string Nom { get; set; }
+        public string ImageURL { get; set; }
 
         #region FK parent
         [ForeignKey("FrameworkEntity")]
