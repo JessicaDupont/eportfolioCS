@@ -1,4 +1,5 @@
-﻿using System;
+﻿using eportfolioCS.DAL.Entities.Bases;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -9,10 +10,17 @@ using System.Threading.Tasks;
 namespace eportfolioCS.DAL.Entities
 {
     [Table("Projet")]
-    public class ProjetEntity : IEntityBase
+    public class ProjetEntity : IEntityIdBase, IEntityDatesBase
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
+        [Column("Date_insert", TypeName = "DateTime2")]
+        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+        public DateTime DateInsert { get; set; }
+        [Column("Date_update", TypeName = "DateTime2")]
+        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+        public DateTime DateUpdate { get; set; }
         [Required]
         public string Titre { get; set; }
         public string Description { get; set; }

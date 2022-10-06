@@ -1,4 +1,5 @@
-﻿using System;
+﻿using eportfolioCS.DAL.Entities.Bases;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -9,16 +10,23 @@ using System.Threading.Tasks;
 namespace eportfolioCS.DAL.Entities
 {
     [Table("Experience")]
-    public class ExperienceEntity : IEntityBase
+    public class ExperienceEntity : IEntityIdBase, IEntityDatesBase
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
+        [Column("Date_insert", TypeName = "DateTime2")]
+        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+        public DateTime DateInsert { get; set; }
+        [Column("Date_update", TypeName = "DateTime2")]
+        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+        public DateTime DateUpdate { get; set; }
         [Required]
         public string Titre { get; set; }
         [Required]
-        [Column("date_debut", TypeName = "DateTime2")]
+        [Column("Date_debut", TypeName = "DateTime2")]
         public DateTime DateDebut { get; set; }
-        [Column("date_fin", TypeName = "DateTime2")]
+        [Column("Date_fin", TypeName = "DateTime2")]
         public DateTime? DateFin { get; set; }
 
         #region FK Etablissement

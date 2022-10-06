@@ -15,13 +15,17 @@ namespace eportfolioCS.DAL.Datas
             /*Texte*/
             builder.Entity<TexteEntity>()
                 .HasData(new TexteEntity { 
-                    ID = 1, 
+                    ID = 1,
+                    DateInsert = DateTime.Now, 
+                    DateUpdate = DateTime.Now,
                     Contenu = "Site en construction"
                 });
             builder.Entity<TexteEntity>()
                 .HasData(new TexteEntity
                 {
                     ID = 2,
+                    DateInsert = DateTime.Now,
+                    DateUpdate = DateTime.Now,
                     Contenu = "C# est un langage de programmation orientée objet, fortement typé, dérivé de C et de C++, ressemblant au langage Java3. " +
                     "Il est utilisé pour développer des applications web, ainsi que des applications de bureau, des services web, des commandes, des widgets ou des bibliothèques de classes. " +
                     "En C#, une application est un lot de classes où une des classes comporte une méthode Main, comme cela se fait en Java." +
@@ -36,6 +40,8 @@ namespace eportfolioCS.DAL.Datas
                 .HasData(new TexteEntity
                 {
                     ID = 3,
+                    DateInsert = DateTime.Now,
+                    DateUpdate = DateTime.Now,
                     Contenu = "Le HyperText Markup Language, généralement abrégé HTML ou, dans sa dernière version, HTML5, est le langage de balisage conçu pour représenter les pages web. " +
                     "Ce langage permet d’écrire de l’hypertexte (d’où son nom), de structurer sémantiquement une page web, de mettre en forme du contenu, de créer des formulaires de saisie ou encore d’inclure des ressources multimédias dont des images, des vidéos, et des programmes informatiques. " +
                     "L'HTML offre également la possibilité de créer des documents interopérables avec des équipements très variés et conformément aux exigences de l’accessibilité du web. " +
@@ -48,6 +54,8 @@ namespace eportfolioCS.DAL.Datas
                 .HasData(new TexteEntity
                 {
                     ID = 4,
+                    DateInsert = DateTime.Now,
+                    DateUpdate = DateTime.Now,
                     Contenu = "Java est un langage de programmation orienté objet créé par James Gosling et Patrick Naughton, employés de Sun Microsystems, avec le soutien de Bill Joy (cofondateur de Sun Microsystems en 1982), présenté officiellement le 23 mai 1995 au .SunWorld." +
                     "La société Sun a été ensuite rachetée en 2009 par la société Oracle qui détient et maintient désormais Java. " +
                     "Une particularité de Java est que les logiciels écrits dans ce langage sont compilés vers une représentation binaire intermédiaire qui peut être exécutée dans une machine virtuelle Java (JVM) en faisant abstraction du système d'exploitation. " +
@@ -57,6 +65,8 @@ namespace eportfolioCS.DAL.Datas
                 .HasData(new TexteEntity
                 {
                     ID = 5,
+                    DateInsert = DateTime.Now,
+                    DateUpdate = DateTime.Now,
                     Contenu = "JavaScript est un langage de programmation de scripts principalement employé dans les pages web interactives et à ce titre est une partie essentielle des applications web. " +
                     "Avec les langages HTML et CSS, JavaScript est au cœur des langages utilisés par les développeurs web. " +
                     "Une grande majorité des sites web l'utilisent, et la majorité des navigateurs web disposent d'un moteur JavaScript pour l'interpréter. " +
@@ -76,6 +86,8 @@ namespace eportfolioCS.DAL.Datas
                 .HasData(new TexteEntity
                 {
                     ID = 6,
+                    DateInsert = DateTime.Now,
+                    DateUpdate = DateTime.Now,
                     Contenu = "SQL (sigle de Structured Query Language, en français langage de requête structurée) est un langage informatique normalisé servant à exploiter des bases de données relationnelles. " +
                     "La partie langage de manipulation des données de SQL permet de rechercher, d'ajouter, de modifier ou de supprimer des données dans les bases de données relationnelles." +
                     "Outre le langage de manipulation des données : " +
@@ -91,6 +103,8 @@ namespace eportfolioCS.DAL.Datas
                 .HasData(new TexteEntity
                 {
                     ID = 7,
+                    DateInsert = DateTime.Now,
+                    DateUpdate = DateTime.Now,
                     Contenu = "PHP: Hypertext Preprocessor, plus connu sous son sigle PHP (sigle auto-référentiel), est un langage de programmation libre, principalement utilisé pour produire des pages Web dynamiques via un serveur HTTP, mais pouvant également fonctionner comme n'importe quel langage interprété de façon locale. " +
                     "PHP est un langage impératif orienté objet. " +
                     "PHP a permis de créer un grand nombre de sites web célèbres, comme Facebook et Wikipédia. " +
@@ -101,6 +115,8 @@ namespace eportfolioCS.DAL.Datas
                 .HasData(new TexteEntity
                 {
                     ID = 8,
+                    DateInsert = DateTime.Now,
+                    DateUpdate = DateTime.Now,
                     Contenu = "Les feuilles de style en cascade, généralement appelées CSS de l'anglais Cascading Style Sheets, forment un langage informatique qui décrit la présentation des documents HTML et XML. " +
                     "Les standards définissant CSS sont publiés par le World Wide Web Consortium (W3C). " +
                     "Introduit au milieu des années 1990, CSS devient couramment utilisé dans la conception de sites web et bien pris en charge par les navigateurs web dans les années 2000. " +
@@ -159,6 +175,8 @@ namespace eportfolioCS.DAL.Datas
             builder.Entity<ExperienceEntity>()
                 .HasData(new ExperienceEntity { 
                     ID = 1,
+                    DateInsert = DateTime.Now,
+                    DateUpdate = DateTime.Now,
                     CategorieID = 5,
                     FirmeID = 1,
                     Titre = "Développeur Web orienté Data Analysis",
@@ -169,6 +187,8 @@ namespace eportfolioCS.DAL.Datas
                 .HasData(new ExperienceEntity
                 {
                     ID = 2,
+                    DateInsert = DateTime.Now,
+                    DateUpdate = DateTime.Now,
                     CategorieID = 5,
                     FirmeID = 1,
                     Titre = "Développeur .NET, BI & Sharepoint",
@@ -180,6 +200,8 @@ namespace eportfolioCS.DAL.Datas
                 .HasData(new ExperienceEntity
                 {
                     ID = 3,
+                    DateInsert = DateTime.Now,
+                    DateUpdate = DateTime.Now,
                     CategorieID = 4,
                     FirmeID = 2,
                     Titre = "Bachelier en informatique de gestion",
@@ -190,14 +212,16 @@ namespace eportfolioCS.DAL.Datas
             builder.Entity<ExperienceEntity>()
                 .HasData(new ExperienceEntity
                 {
-                    ID = 4,
+                    ID = 4, 
+                    DateInsert = DateTime.Now,
+                    DateUpdate = DateTime.Now,
                     CategorieID = 4,
                     FirmeID = 2,
                     Titre = "Bachelier en informatique de gestion",
                     DateDebut = new DateTime(2008, 9, 15),
                     DateFin = new DateTime(2011, 1, 7),
                     TexteID = 1
-                });
+                }) ;
 
             /*Type Projet*/
             builder.Entity<TypeProjetEntity>()

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using eportfolioCS.DAL.Entities.Bases;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -9,9 +10,10 @@ using System.Threading.Tasks;
 namespace eportfolioCS.DAL.Entities
 {
     [Table("framework_projet")]
-    public class FrameworkProjetEntity : IEntityBase
+    public class FrameworkProjetEntity : IEntityIdBase
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
         public string VersionIDE { get; set; }
         public string VersionFramework { get; set; }
