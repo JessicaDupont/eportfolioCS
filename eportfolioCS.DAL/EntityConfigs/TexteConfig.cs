@@ -14,11 +14,11 @@ namespace eportfolioCS.DAL.EntityConfigs
         public void Configure(EntityTypeBuilder<TexteEntity> builder)
         {
             builder.Property(e => e.DateInsert)
-                .HasDefaultValue(DateTime.Now);
+                .HasDefaultValueSql("GetDate()");
             builder.Property(e => e.DateUpdate)
-                .HasDefaultValue(DateTime.Now);
+                .HasDefaultValueSql("GetDate()");
             builder.HasCheckConstraint(
-                "C_update_apres_insert",
+                "Ctexte_update_apres_insert",
                 "'Date_update' >= 'Date_insert'");
         }
     }

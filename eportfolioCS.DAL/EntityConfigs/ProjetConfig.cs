@@ -14,14 +14,14 @@ namespace eportfolioCS.DAL.EntityConfigs
         public void Configure(EntityTypeBuilder<ProjetEntity> builder)
         {
             builder.Property(e => e.DateInsert)
-                .HasDefaultValue(DateTime.Now);
+                .HasDefaultValueSql("GetDate()");
             builder.Property(e => e.DateUpdate)
-                .HasDefaultValue(DateTime.Now);
+                .HasDefaultValueSql("GetDate()");
             builder.HasCheckConstraint(
-                "C_update_apres_insert",
+                "Cprojet_update_apres_insert",
                 "'Date_update' >= 'Date_insert'");
             builder.HasCheckConstraint(
-                "C_fin_apres_debut",
+                "Cprojet_fin_apres_debut",
                 "'Date_fin' >= 'Date_debut'");
             //TODO titre unique
             //TODO url unique

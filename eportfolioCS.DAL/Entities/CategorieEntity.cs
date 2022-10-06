@@ -17,6 +17,7 @@ namespace eportfolioCS.DAL.Entities
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
+
         [Required]
         public string Nom { get; set; }
 
@@ -24,7 +25,11 @@ namespace eportfolioCS.DAL.Entities
         [ForeignKey("CategorieEntity")]
         public int? ParentID { get; set; }
         public virtual CategorieEntity Parent { get; set; }
-        public virtual CategorieEntity Enfant { get; set; }
+        public virtual IEnumerable<CategorieEntity> Enfants { get; set; }
+        #endregion
+
+        #region destinations FR
+        public virtual IEnumerable<ExperienceEntity> Experiences { get; set; }
         #endregion
 
     }

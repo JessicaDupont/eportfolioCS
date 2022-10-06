@@ -14,14 +14,14 @@ namespace eportfolioCS.DAL.EntityConfigs
         public void Configure(EntityTypeBuilder<ExperienceEntity> builder)
         {
             builder.Property(e => e.DateInsert)
-                .HasDefaultValue(DateTime.Now);
+                .HasDefaultValueSql("GetDate()");
             builder.Property(e => e.DateUpdate)
-                .HasDefaultValue(DateTime.Now);
+                .HasDefaultValueSql("GetDate()");
             builder.HasCheckConstraint(
-                "C_update_apres_insert", 
+                "Cexp_update_apres_insert", 
                 "'Date_update' >= 'Date_insert'");
             builder.HasCheckConstraint(
-                "C_fin_apres_debut",
+                "Cexp_fin_apres_debut",
                 "'Date_fin' >= 'Date_debut'");
         }
     }

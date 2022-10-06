@@ -15,6 +15,7 @@ namespace eportfolioCS.DAL.Entities
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
+
         [Required]
         public string Nom { get; set; }
         public string ImageURL { get; set; }
@@ -28,7 +29,7 @@ namespace eportfolioCS.DAL.Entities
 
         #region FK langage
         [ForeignKey("LangageEntity")]
-        public int? LangageID { get; set; }
+        public int LangageID { get; set; }
         public virtual LangageEntity Langage { get; set; }
         #endregion
 
@@ -36,6 +37,10 @@ namespace eportfolioCS.DAL.Entities
         [ForeignKey("TexteEntity")]
         public int? TexteID { get; set; }
         public virtual TexteEntity Texte { get; set; }
+        #endregion
+
+        #region destinations FR
+        public virtual IEnumerable<FrameworkProjetEntity> FrameworkProjets { get; set; }
         #endregion
     }
 }

@@ -24,5 +24,8 @@ namespace eportfolioCS.DAL.Entities
         public TexteEntity Texte { get; set; }
         #endregion
 
+        #region destinations FR
+        public virtual IEnumerable<FrameworkProjetEntity> FrameworkProjets { get; set; }
+        #endregion
     }
 }

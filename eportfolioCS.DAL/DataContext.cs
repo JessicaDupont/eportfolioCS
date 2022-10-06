@@ -1,5 +1,6 @@
 ﻿using eportfolioCS.DAL.Datas;
 using eportfolioCS.DAL.Entities;
+using eportfolioCS.DAL.EntityConfigs;
 using Microsoft.EntityFrameworkCore;
 using System;
 
@@ -47,6 +48,17 @@ namespace eportfolioCS.DAL
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
+            builder.ApplyConfiguration(new TexteConfig());
+            builder.ApplyConfiguration(new CategorieConfig());
+            builder.ApplyConfiguration(new LangageConfig());
+            builder.ApplyConfiguration(new FrameworkConfig());
+            builder.ApplyConfiguration(new TypeProjetConfig());
+            builder.ApplyConfiguration(new IdeConfig());
+            builder.ApplyConfiguration(new SgbdConfig());
+            builder.ApplyConfiguration(new EtablissementConfig());
+            builder.ApplyConfiguration(new ExperienceConfig());
+            builder.ApplyConfiguration(new ProjetConfig());
+            builder.ApplyConfiguration(new FrameworkProjetConfig());
             InitDB.LoadData(builder);
         }
     }

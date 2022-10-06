@@ -28,12 +28,21 @@ namespace eportfolioCS.DAL.Entities
         public string Contenu { get; set; }
         public int? Position { get;set; }
 
-        #region FK TextePrecedent
+        #region FK Parent
         [ForeignKey("TexteEntity")]
-        public int? TextePrecedentID { get; set; }
-        public virtual TexteEntity TextePrecedent { get; set; }
-        public virtual TexteEntity TexteSuivant { get; set; }
+        public int? ParentID { get; set; }
+        public virtual TexteEntity Parent { get; set; }
+        public virtual IEnumerable<TexteEntity> Enfants { get; set; }
         #endregion
 
+        #region destinations FR
+        public virtual IEnumerable<ExperienceEntity> Experiences { get; set; }
+        public virtual IEnumerable<LangageEntity> Langages { get; set; }
+        public virtual IEnumerable<ProjetEntity> Projets { get; set; }
+        public virtual IEnumerable<TypeProjetEntity> TypeProjets { get; set; }
+        public virtual IEnumerable<IdeEntity> IDEs { get; set; }
+        public virtual IEnumerable<FrameworkEntity> Frameworks { get; set; }
+        public virtual IEnumerable<SgbdEntity> SGBDs { get; set; }
+        #endregion
     }
 }
